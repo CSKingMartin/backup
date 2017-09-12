@@ -8,15 +8,19 @@ var Monster = React.createClass({
 		return(
 			<ul>
 				{Monsters.map(function(monster, index) {
-					return <div key={index}>
-						<p>{monster.name}</p>
-						<p>{monster.size}</p>
-						<p>{monster.type}</p>
-						<p>{monster.alignment}</p>
-						<p>{monster.hit_points}</p>
-						<p>{monster.hit_dice}</p>
-						<p>{monster.speed}</p>
+					return <div className="monster" key={index}>
+						<h1>{monster.name}</h1>
+						<div className="descriptors">
+							<p>{monster.size}</p>
+							<p>{monster.type}</p>
+							<p>{monster.alignment}</p>
+						</div>
 						<div className="stats">
+							<p>{monster.hit_points}</p>
+							<p>{monster.hit_dice}</p>
+							<p>{monster.speed}</p>
+						</div>
+						<div className="attributes">
 							<p>{monster.strength}</p>
 							<p>{monster.dexterity}</p>
 							<p>{monster.constitution}</p>
