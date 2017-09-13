@@ -8,7 +8,7 @@ var Monster = React.createClass({
 		return(
 			<ul>
 				{Monsters.map(function(monster, index) {
-					return <div className="monster" key={index}>
+					return <div className="Monster" key={index}>
 						<h1>{monster.name}</h1>
 						<div className="descriptors">
 							<p>{monster.size}</p>

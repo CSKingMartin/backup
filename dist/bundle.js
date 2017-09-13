@@ -9784,10 +9784,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 _reactDom2.default.render(_react2.default.createElement(_Monster2.default, { data: 'hi' }), document.getElementById('page'));
 
-if (false) {
-	console.log('hi mom');
-}
-
 /* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/Users/cwells/Documents/reactTesting/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "index.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ }),
@@ -22437,68 +22433,84 @@ var Monster = _react2.default.createClass({
 			null,
 			_monsters2.default.map(function (monster, index) {
 				return _react2.default.createElement(
-					'li',
-					{ key: index },
-					monster.name,
+					'div',
+					{ className: 'monster', key: index },
 					_react2.default.createElement(
-						'p',
+						'h1',
 						null,
-						monster.size
+						monster.name
 					),
 					_react2.default.createElement(
-						'p',
-						null,
-						monster.type
+						'div',
+						{ className: 'descriptors' },
+						_react2.default.createElement(
+							'p',
+							null,
+							monster.size
+						),
+						_react2.default.createElement(
+							'p',
+							null,
+							monster.type
+						),
+						_react2.default.createElement(
+							'p',
+							null,
+							monster.alignment
+						)
 					),
 					_react2.default.createElement(
-						'p',
-						null,
-						monster.alignment
+						'div',
+						{ className: 'stats' },
+						_react2.default.createElement(
+							'p',
+							null,
+							monster.hit_points
+						),
+						_react2.default.createElement(
+							'p',
+							null,
+							monster.hit_dice
+						),
+						_react2.default.createElement(
+							'p',
+							null,
+							monster.speed
+						)
 					),
 					_react2.default.createElement(
-						'p',
-						null,
-						monster.hit_points
-					),
-					_react2.default.createElement(
-						'p',
-						null,
-						monster.hid_dice
-					),
-					_react2.default.createElement(
-						'p',
-						null,
-						monster.speed
-					),
-					_react2.default.createElement(
-						'p',
-						null,
-						monster.strength
-					),
-					_react2.default.createElement(
-						'p',
-						null,
-						monster.dexterity
-					),
-					_react2.default.createElement(
-						'p',
-						null,
-						monster.constitution
-					),
-					_react2.default.createElement(
-						'p',
-						null,
-						monster.intelligence
-					),
-					_react2.default.createElement(
-						'p',
-						null,
-						monster.wisdom
-					),
-					_react2.default.createElement(
-						'p',
-						null,
-						monster.charisma
+						'div',
+						{ className: 'attributes' },
+						_react2.default.createElement(
+							'p',
+							null,
+							monster.strength
+						),
+						_react2.default.createElement(
+							'p',
+							null,
+							monster.dexterity
+						),
+						_react2.default.createElement(
+							'p',
+							null,
+							monster.constitution
+						),
+						_react2.default.createElement(
+							'p',
+							null,
+							monster.intelligence
+						),
+						_react2.default.createElement(
+							'p',
+							null,
+							monster.wisdom
+						),
+						_react2.default.createElement(
+							'p',
+							null,
+							monster.charisma
+						)
 					)
 				);
 			})

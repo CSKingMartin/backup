@@ -1,5 +1,4 @@
 const path = require('path');
-const combineLoaders = require('webpack-combine-loaders');
 
 module.exports = {
 	//entry point: application starts exe and webpack starts the bundle
@@ -15,19 +14,34 @@ module.exports = {
   	contentBase: './dist/', //static file location
   	hot: true //hot module replacement
   },
+  // configuration for modules
   module: {
-		loaders: [{
-			test: /\.js$/,
-			exclude: /node_modules/,
-			loader: 'react-hot-loader'
-		},
-		{
-			test: /\.js$/,
-			exclude: /node_modules/,
-			loader: 'babel-loader',
-			query: {
-				presets: ['es2015', 'react']
-			},
-		}]
-	}
+  	rules: [
+  		// for js or jsx files...
+  		{ test: /\.jsx?$/,
+  			exclude: /node_modules/,
+  			use: [
+  				{ loader: 'react-hot-loader' },
+  				{ loader: 'babel-loader' }
+  			]
+  		},
+  		// for css files...
+  		{ test: /\.css$/,
+  			exclude: /node_modules/,
+  			use: [
+  				{ loader: 'style-loader' },
+  				{ loader: 'css-loader',
+  					options: { importLoaders: 1 } 
+  				},
+  				{ loader: 'postcss-loader' }
+  			]
+  		}
+  	]
+  },
+
+  resolve: {
+  	alias: {
+  		Components: path.resolve(__dirname, 'src/components/')
+  	}
+  }
 }
