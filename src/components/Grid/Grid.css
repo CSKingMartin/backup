@@ -1,0 +1,10 @@
+.Grid {
+	display: flex;
+	flex-wrap: wrap;
+
+	& > .Monster {
+		width: 30%;
+		min-width: 180px;
+		flex-grow: 1;
+	}
+}

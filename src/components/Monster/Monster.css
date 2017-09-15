@@ -1,3 +1,29 @@
 .Monster {
-	color: blue;
+	cursor: pointer;
+	margin: .2em;
+
+	&__name {
+		text-align: center;
+	}
+
+	&__stats{
+		text-align: center;
+		display: flex;
+		flex-wrap: wrap;
+
+		&__row {
+			position: relative;
+			display: flex;
+			flex: 1;
+
+			flex-direction: row;
+
+			& > * {
+				position: relative;
+				flex:1;
+				padding-left: 0.5em;
+				padding-right: 0.5em;
+			}
+		}
+	}
 }
