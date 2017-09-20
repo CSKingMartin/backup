@@ -1,1 +1,0 @@
-import Monster from './components/Monster/Monster.jsx';

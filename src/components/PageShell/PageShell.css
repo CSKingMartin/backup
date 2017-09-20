@@ -1,0 +1,26 @@
+.PageShell {
+
+	&__header {
+		width: 100%;
+		position: fixed;
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		height: 75px;
+		z-index: 2;
+		background-color: grey;
+
+		li button {
+			display: block;
+			height: 100%;
+			text-decoration: none;
+		}
+	}
+
+
+	&__main {
+		/*margin-top: 75px;*/
+		transition: transform 0.5s;
+		right: 0;
+	}
+}

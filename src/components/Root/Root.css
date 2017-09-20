@@ -1,4 +1,7 @@
+body {
+	margin: 0;
+}
+
 .Root {
-	padding: 2em;
 	max-width: 1980px;
 }

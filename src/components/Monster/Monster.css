@@ -26,4 +26,15 @@
 			}
 		}
 	}
+
+	& #button--remove {
+		display: none;
+	}
+	
+	&--inDrawer{
+		#button--remove {
+			display: inherit;
+		}
+	}
+
 }
