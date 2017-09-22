@@ -1,0 +1,25 @@
+.MonsterSelector {
+	max-width: 45em;
+	margin: auto;
+	position: relative;
+	overflow: hidden;
+	flex: 2;
+
+	&__main {
+		max-height: 45em;
+		overflow: scroll;
+		margin-top: 3em;
+
+	}
+
+	&__navbar {
+		box-sizing: border-box;
+		display: flex;
+		height: 3em;
+		position: fixed;
+		width: 100%;
+		max-width: 45em;
+		background-color: #afd3a5;
+		z-index: 2;
+	}
+}

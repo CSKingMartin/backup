@@ -1,7 +1,6 @@
 import React from 'react';
 import render from 'react-dom';
 import Card from '../Card/Card.jsx';
-import Grid from '../Grid/Grid.jsx'
 
 import messageBus from '../../helpers/messageBus.js';
 import createClassStack from '../../helpers/createClassStack.js';
@@ -13,11 +12,9 @@ function Monster (props) {
     `Monster--${props.variant}`
   ]);
 
+
 	function handleClick(props, bool) {
-		// yes we are adding
-		if(bool) { messageBus.emit('add:monster', props); }
-		// no we are not
-			else { messageBus.emit('remove:monster', props); };
+	  props.cb(props, bool);
 	}
 
 	return (
@@ -56,8 +53,8 @@ function Monster (props) {
 						</div>
 					</div>
 				</div>
-				<button id="button--add" onClick={() => handleClick(props, true)}>ADD</button>
-				<button id="button--remove" onClick={() => handleClick(props, false)}>REMOVE</button>
+				<button id="button--add" onClick={() => props.cb(props.data, true)}>ADD</button>
+				<button id="button--remove" onClick={() => props.cb(props.data, false)}>REMOVE</button>
 			</Card>
 		</div>
 	);

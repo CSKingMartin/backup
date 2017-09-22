@@ -2,6 +2,7 @@ import React from 'react';
 import render from 'react-dom';
 
 import InitiativeDrawer from '../InitiativeDrawer/InitiativeDrawer.jsx';
+import Rhythm from '../Rhythm/Rhythm.jsx';
 
 
 class PageShell extends React.Component {
@@ -35,11 +36,10 @@ class PageShell extends React.Component {
 		};
 	}
 
+	// <PageShell__header onClick={() => this.handleClick()} message={this.state.message} />
 	render() {
 		return (
 			<div className="PageShell">
-				<PageShell__header onClick={() => this.handleClick()} message={this.state.message} />
-				<InitiativeDrawer />
 				<PageShell__main>
 					{this.props.children}
 				</PageShell__main>
@@ -52,19 +52,14 @@ class PageShell extends React.Component {
 function PageShell__header(props) {
 	return (
 			<ul className="PageShell__header">
-				<li>
-					<button onClick={props.onClick}>{props.message}</button>
-				</li>
-				<li>
-					<input id="search" type="text" />
-				</li>
+				
 			</ul>
 	);
 }
 
 function PageShell__main(props){
 	return (
-		<div className="PageShell__main">
+	<div className="PageShell__main">
 			{props.children}
 		</div>
 	);

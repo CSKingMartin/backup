@@ -1,5 +1,4 @@
 .Monster {
-	cursor: pointer;
 	margin: .2em;
 
 	&__name {

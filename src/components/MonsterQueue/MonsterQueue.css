@@ -1,0 +1,17 @@
+.MonsterQueue {
+	box-sizing: border-box;
+	display: block;
+	height: 200px;
+	width: 100%;
+	display: flex;
+	overflow: scroll;
+
+	background-color: #afd3a5;
+	transition: transform 0.7s, height 0.2s ease;
+	height: 0;
+
+	&--open {
+		transform: translate(0, -200px);
+		height: 200px;
+	}
+}

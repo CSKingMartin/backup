@@ -1,7 +1,10 @@
 body {
 	margin: 0;
+	* {
+		box-sizing: border-box;
+	}
 }
 
 .Root {
-	max-width: 1980px;
+	max-width: 120em;
 }

@@ -1,9 +1,9 @@
-.Grid {
+.MonsterGrid {
 	display: flex;
 	flex-wrap: wrap;
 
 	& > .Monster {
-		width: 30%;
+		width: 48%;
 		min-width: 180px;
 		flex-grow: 1;
 	}

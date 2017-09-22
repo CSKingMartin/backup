@@ -3,12 +3,11 @@ import ReactDOM from 'react-dom';
 
 //data
 import Monsters from './monsters.json';
+import InitiativeStarter from './components/InitiativeStarter/InitiativeStarter.jsx';
 
 //React Components
-import Monster from './components/Monster/Monster.jsx';
-import InitiativeDrawer from './components/InitiativeDrawer/InitiativeDrawer.jsx';
 import PageShell from './components/PageShell/PageShell.jsx';
-import Grid from './components/Grid/Grid.jsx';
+import MonsterSelector from './components/MonsterSelector/MonsterSelector.jsx';
 
 const requireAll = (context) => context.keys().map(context);
 
@@ -18,11 +17,9 @@ requireAll(require.context('./components/', true, /\.css$/));
 ReactDOM.render(
 	<div>
 		<PageShell>
-			<Grid>
-				{Monsters.map(function(data, index){
-          return <Monster key={index} data={data} />
-        })}
-			</Grid>
+			<InitiativeStarter>
+				<MonsterSelector data={Monsters} />
+			</InitiativeStarter>
 		</PageShell>
 	</div>,
 
